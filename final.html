@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fim da Historia ou Apenas um Começo?</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <a href="pagina2.html" class="botao-voltar">
+    ← Voltar
+    </a>
+
+        <audio id="musica" autoplay loop>
+        <source src="musicas/eu_amo_voce.mp3" type="audio/mpeg">
+        </audio>
+
+        <script>
+        const musica = document.getElementById("musica");
+        musica.volume = 0.4;
+        </script>
+
+    <h1>❤️ Você aceitou ❤️</h1>
+
+    <!-- Foto especial -->
+    <video class="video-final" autoplay loop muted playsinline>
+    <source src="videos/videofinal.mp4" type="video/mp4">
+    </video>
+
+    <p class="texto-final">
+        Eu amo você
+    </p>
+
+    <p class="texto-final">
+        E mal posso esperar pelos próximos dias, <br> meses e anos ao seu lado ❤️
+    </p>
+
+    <hr class="linha-amor">
+
+    <div class="ultima-surpresa">
+
+        <h2>Então eu tenho só mais uma coisa para dizer...</h2>
+
+        <button onclick="abrirMensagem()" class="btn-final">
+            💌 Abrir última mensagem
+        </button>
+
+        <div id="mensagem-secreta">
+         <strong>Não foram apenas fotos que você viu aqui,</strong><br>
+         <strong>mas momentos que eu nunca quero deixar partir. </strong><br>
+         <strong>E se existe algo que desejo guardar, </strong><br>
+         <strong>a chance de continuar ao seu lado e te amar.❤️</strong>
+        </div>
+
+    </div>
+
+    <script>
+
+        function abrirMensagem() {
+
+            document.getElementById("mensagem-secreta")
+                .style.display = "block";
+        }
+
+    </script>
+
+<div class="coracoes"></div>
+
+<script>
+
+function criarCoracao() {
+
+    const coracao = document.createElement("div");
+
+    coracao.classList.add("coracao");
+
+    coracao.innerHTML = "❤️";
+
+    coracao.style.left = Math.random() * 100 + "vw";
+
+    coracao.style.animationDuration =
+        (Math.random() * 3 + 4) + "s";
+
+    document.querySelector(".coracoes")
+        .appendChild(coracao);
+
+    setTimeout(() => {
+
+        coracao.remove();
+
+    }, 7000);
+}
+
+setInterval(criarCoracao, 1200);
+
+</script>
+
+</body>
+
+</html>

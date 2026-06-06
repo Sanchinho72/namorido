@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o Amor da Minha Vida ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Imagens/coracao.ico" type="image/x-icon">
+</head>
+
+<body>
+    <audio id="musica" autoplay loop>
+        <source src="musicas/eu_amo_voce.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const musica = document.getElementById("musica");
+        musica.volume = 0.4;
+    </script>
+
+    <h1>Para o Meu Amor...</h1>
+    <p class="introducao">
+        Esse site é pra você lembrar o quanto eu te amo ❤️
+    </p>
+    <p>
+        Você é a pessoa mais importante da minha vida
+    </p>
+    <section>
+        <h2>Nossas Memórias 📸</h2>
+        <div class="galeria">
+
+            <!-- Foto 1 -->
+            <div class="foto">
+                <img src="Imagens/foto1.jpg" alt="Nossa foto">
+                <p><strong>Cada Momento Juntos</strong> ❤️</p>
+            </div>
+
+            <!-- Foto 2 -->
+            <div class="foto">
+                <img src="Imagens/foto2.jpg" alt="Nossa foto">
+                <p><strong>Cada Lembrança</strong> ❤️</p>
+            </div>
+
+            <!-- Foto 3 -->
+            <div class="foto">
+                <img src="Imagens/foto3.jpg" alt="Nossa foto">
+                <p><strong>Eu Te Amo</strong>❤️</p>
+            </div>
+
+            <!-- Foto 4 -->
+            <div class="foto">
+                <img src="Imagens/foto4.jpg" alt="Nossa foto">
+                <p><strong>Cada Amanhecer</strong>❤️</p>
+            </div>
+
+            <!-- Foto 5 -->
+            <div class="foto">
+                <img src="Imagens/foto5.jpg" alt="Nossa foto">
+                <p><strong>Cada Anoitecer</strong> ❤️</p>
+            </div>
+
+            <!-- Foto 6 -->
+            <div class="foto">
+                <img src="Imagens/foto6.jpg" alt="Nossa foto">
+                <p><strong>Eu Me Apaixono Mais Por Você</strong> ❤️</p>
+            </div>
+
+            <!-- Foto 7 -->
+            <div class="foto">
+                <img src="Imagens/foto7.jpg" alt="Nossa foto">
+                <p><strong>Cada Minuto Com Você</strong> ❤️</p>
+            </div>
+
+            <!-- Foto 8 -->
+            <div class="foto">
+                <img src="Imagens/foto8.jpg" alt="Nossa foto">
+                <p><strong>Cada Segundo Com Você</strong> ❤️</p>
+            </div>
+
+            <!-- Foto 9 -->
+            <div class="foto">
+                <img src="Imagens/foto9.jpg" alt="Nossa foto">
+                <p><strong>Eu Sempre Irei Te Amar</strong> ❤️</p>
+            </div>
+
+        </div>
+    </section>
+    <section class="carta">
+        <h2>Uma Mensagem Para Você 💌</h2>
+
+        <p>
+            Para o meu amor... Querida Maria, queria te dizer o quanto eu te amo. Nunca sei o que escrever, mas digito com os meus sentimentos.
+        </p>
+            
+        <p>
+            A cada dia que passa, meu coração se enche de orgulho por te ter ao meu lado. Você é incrível e uma pessoa maravilhosa. Eu te amo tanto! Todos os dias eu penso em como eu sempre estive certo de me apaixonar por você.
+        </p>
+
+         <p>
+                Escrevo isso no dia 02/06/26 e estou certo de que você vai ser a mulher com quem eu vou me casar e vou dividir minha vida. Obrigado por todos os momentos incríveis que passamos juntos,
+                você faz meus dias mais felizes e especiais.
+                Espero criar ainda mais memórias ao seu lado Por tanto, quero ter conseguido te dar esse presente. Eu te amo.
+        </p>
+
+
+        <p>
+            PS: Estou já imaginando seu sorrisinho enquanto lê tudo isso aqui.
+
+        </p>
+
+        <p>
+            PS2: Isso deu muito trabalho pra fazer, espero que você chore lendo tudo isso. Se não estiver, por favor, force um choro pra me deixar feliz
+        </p>
+
+            <p>PS3: Espero que tenha gostado de tudo.</p>
+
+
+            <p>Com amor,</p>
+            <p>Richard</p>
+        
+    </section>
+
+<a href="pagina2.html" class="botao-proximo">
+    Próximo ❤️
+</a>
+
+<div class="coracoes"></div>
+
+<script>
+
+function criarCoracao() {
+
+    const coracao = document.createElement("div");
+
+    coracao.classList.add("coracao");
+
+    coracao.innerHTML = "❤️";
+
+    coracao.style.left = Math.random() * 100 + "vw";
+
+    coracao.style.animationDuration =
+        (Math.random() * 3 + 4) + "s";
+
+    document.querySelector(".coracoes")
+        .appendChild(coracao);
+
+    setTimeout(() => {
+
+        coracao.remove();
+
+    }, 7000);
+}
+
+setInterval(criarCoracao, 800);
+
+</script>
+
+</body>
+</html>
