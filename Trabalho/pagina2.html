@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Eu amo você</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Imagens/coracao.ico" type="image/x-icon">
+</head>
+<body>
+    <a href="index.html" class="botao-voltar">
+    ← Voltar
+    </a>
+
+        <audio id="musica" autoplay loop>
+        <source src="musicas/eu_amo_voce.mp3" type="audio/mpeg">
+        </audio>
+
+        <script>
+        const musica = document.getElementById("musica");
+        musica.volume = 0.4;
+        </script>
+
+<h2>❤️ Estamos juntos há...</h2>
+
+<div id="tempo-juntos"></div>
+
+<h2>⏳ Já se passaram...</h2>
+
+<div id="contador-amor"></div>
+
+<script>
+
+function atualizarContador() {
+
+    const inicio = new Date(2024, 11, 3); // 03/12/2024
+    const hoje = new Date();
+
+    // ===== ANOS, MESES E DIAS =====
+
+    let anos = hoje.getFullYear() - inicio.getFullYear();
+    let meses = hoje.getMonth() - inicio.getMonth();
+    let dias = hoje.getDate() - inicio.getDate();
+
+    if (dias < 0) {
+        meses--;
+
+        const ultimoMes = new Date(
+            hoje.getFullYear(),
+            hoje.getMonth(),
+            0
+        );
+
+        dias += ultimoMes.getDate();
+    }
+
+    if (meses < 0) {
+        anos--;
+        meses += 12;
+    }
+
+    document.getElementById("tempo-juntos").innerHTML = `
+        <p>❤️ ${anos} ano(s)</p>
+        <p>❤️ ${meses} mês(es)</p>
+        <p>❤️ ${dias} dia(s)</p>
+    `;
+
+    // ===== DIAS, HORAS, MINUTOS E SEGUNDOS =====
+
+    const diferenca = hoje - inicio;
+
+    const segundos = Math.floor(diferenca / 1000);
+    const minutos = Math.floor(segundos / 60);
+    const horas = Math.floor(minutos / 60);
+    const totalDias = Math.floor(horas / 24);
+
+    document.getElementById("contador-amor").innerHTML = `
+        <p>⏳ ${totalDias.toLocaleString('pt-BR')} dias</p>
+        <p>⏰ ${horas.toLocaleString('pt-BR')} horas</p>
+        <p>🕒 ${minutos.toLocaleString('pt-BR')} minutos</p>
+        <p>✨ ${segundos.toLocaleString('pt-BR')} segundos</p>
+    `;
+}
+
+atualizarContador();
+
+setInterval(atualizarContador, 1000);
+
+</script>
+
+<h2>❤️ 10 Motivos Pelos Quais Eu Te Amo ❤️</h2>
+
+<div class="motivos">
+
+    <div class="cartao" onclick="mostrarMotivo(this)">
+        <div class="frente">❤️ Motivo 1 ❤️</div>
+        <div class="verso">
+            <strong>Eu amo seu sorriso.</strong>
+        </div>
+    </div>
+
+    <div class="cartao" onclick="mostrarMotivo(this)">
+        <div class="frente">❤️ Motivo 2 ❤️</div>
+        <div class="verso">
+           <strong>Eu amo o seu olhar</strong>
+        </div>
+    </div>
+
+    <div class="cartao" onclick="mostrarMotivo(this)">
+        <div class="frente">❤️ Motivo 3 ❤️</div>
+        <div class="verso">
+          <strong>Eu amo o seu jeito de ser</strong>
+        </div>
+    </div>
+
+    <div class="cartao" onclick="mostrarMotivo(this)">
+        <div class="frente">❤️ Motivo 4 ❤️</div>
+        <div class="verso">
+            <strong>Eu amo quando você se empolga falando de algo que gosta.</strong>
+        </div>
+    </div>
+
+    <div class="cartao" onclick="mostrarMotivo(this)">
+        <div class="frente">❤️ Motivo 5 ❤️</div>
+        <div class="verso">
+            <strong>Eu amo ficar te olhando</strong>
+        </div>
+    </div>
+
+    <div class="cartao" onclick="mostrarMotivo(this)">
+        <div class="frente">❤️ Motivo 6 ❤️</div>
+        <div class="verso">
+           <strong>Eu amo você por deixar parecer facil tudo oque voce aprende mesmo sendo muito dificil</strong>
+        </div>
+    </div>
+
+    <div class="cartao" onclick="mostrarMotivo(this)">
+        <div class="frente">❤️ Motivo 7 ❤️</div>
+        <div class="verso">
+          <strong>Eu amo a paciência que você tem comigo</strong>
+        </div>
+    </div>
+
+    <div class="cartao" onclick="mostrarMotivo(this)">
+        <div class="frente">❤️ Motivo 8 ❤️</div>
+        <div class="verso">
+            <strong>Eu amo quando você me abraçava quando dormiamos juntos</strong>
+        </div>
+    </div>
+
+    <div class="cartao" onclick="mostrarMotivo(this)">
+        <div class="frente">❤️ Motivo 9 ❤️</div>
+        <div class="verso">
+            <strong>Eu amo por você ser minha amiga e a minha namorada</strong>
+        </div>
+    </div>
+
+    <div class="cartao" onclick="mostrarMotivo(this)">
+        <div class="frente">❤️ Motivo 10 ❤️</div>
+        <div class="verso">
+           <strong>Eu amo suas piadas e seu jeito de ser carinhosa</strong>
+        </div>
+    </div>
+
+</div>
+<script>
+
+function mostrarMotivo(cartao) {
+
+    const frente = cartao.querySelector(".frente");
+    const verso = cartao.querySelector(".verso");
+
+    if (verso.style.display === "block") {
+
+        verso.style.display = "none";
+        frente.style.display = "block";
+
+    } else {
+
+        frente.style.display = "none";
+        verso.style.display = "block";
+    }
+}
+
+</script>
+<h2>❤️ Você aceita continuar criando memórias comigo? ❤️</h2>
+
+<div class="botoes-amor">
+
+    <a href="final.html" class="btn-sim">
+        Sim ❤️
+    </a>
+
+    <button id="btn-nao">
+        Não 😢
+    </button>
+
+</div>
+<script>
+
+const botaoNao = document.getElementById("btn-nao");
+
+botaoNao.addEventListener("mouseover", () => {
+
+    botaoNao.style.position = "fixed";
+
+    const x = Math.random() * (window.innerWidth - 150);
+
+    const y = Math.random() * (window.innerHeight - 80);
+
+    botaoNao.style.left = x + "px";
+    botaoNao.style.top = y + "px";
+});
+
+</script>
+
+<div class="coracoes"></div>
+
+<script>
+
+function criarCoracao() {
+
+    const coracao = document.createElement("div");
+
+    coracao.classList.add("coracao");
+
+    coracao.innerHTML = "❤️";
+
+    coracao.style.left = Math.random() * 100 + "vw";
+
+    coracao.style.animationDuration =
+        (Math.random() * 3 + 4) + "s";
+
+    document.querySelector(".coracoes")
+        .appendChild(coracao);
+
+    setTimeout(() => {
+
+        coracao.remove();
+
+    }, 7000);
+}
+
+setInterval(criarCoracao, 800);
+
+</script>
+
+</body>
+</html>
